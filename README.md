@@ -30,6 +30,14 @@ You'll need to create an AWS user with programmatic access and Simple Email Serv
 1. In the dialog window, type your email address then click "Verify This Email Address".
 1. You’ll receive an email in moments containing a link to verify the address. Click on the link to complete the process.
 
+## Service URL
+
+Once you've deployed using `npm run sls -- deploy --verbose` you'll get an endpoint URL returned. Assign it to `SERVICE_URL` in a `.env` file for parcel to consume.
+
+```sh
+echo "SERVICE_URL=<RETURNED_ENDPOINT_URL>" >> .env
+```
+
 ## Develop
 
 Please use [nvm]
