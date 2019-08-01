@@ -6,7 +6,15 @@ This is a serverless contact form inspired by [smashing contact form].
 
 ## Setup
 
-You'll need to create an AWS user with programmatic access and Simple Email Service to do the mailing.
+Create an AWS user with programmatic access and Simple Email Service to do the mailing, along with other environment variables.
+
+## Environment Variables
+
+Setup environment variables required for deployment, by copying and editing the example values.
+
+```sh
+cp example.env .env
+```
 
 **Serverless User**
 
@@ -29,14 +37,6 @@ You'll need to create an AWS user with programmatic access and Simple Email Serv
 1. On the Email Addresses listing page, click the "Verify a New Email Address" button.
 1. In the dialog window, type your email address then click "Verify This Email Address".
 1. You’ll receive an email in moments containing a link to verify the address. Click on the link to complete the process.
-
-## Service URL
-
-Once you've deployed using `npm run sls -- deploy --verbose` you'll get an endpoint URL returned. Assign it to `SERVICE_URL` in a `.env` file for parcel to consume.
-
-```sh
-echo "SERVICE_URL=<RETURNED_ENDPOINT_URL>" >> .env
-```
 
 ## Develop
 
