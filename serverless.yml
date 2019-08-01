@@ -1,4 +1,14 @@
 service: serverless-contact-form
+plugins:
+  - serverless-dotenv-plugin
+
+custom:
+  dotenv:
+    include:
+      - SES_SENDING_EMAIL
+      - SES_RECEIVING_EMAIL
+      - SITE_NAME
+
 provider:
   name: aws
   runtime: nodejs10.x
