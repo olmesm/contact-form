@@ -26,3 +26,10 @@ functions:
           method: post
           path: static-site-mailer
           cors: true
+
+package:
+  exclude:
+    - static-form/**
+    - dist/**
+    - data.json
+    - README.md

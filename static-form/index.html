@@ -10,8 +10,7 @@
 </head>
 
 <body>
-
-    <form action="{{ SERVICE_URL }}" method="POST">
+    <form method="POST">
         <label>
             Name
             <input type="text" name="name" required>
@@ -26,26 +25,43 @@
         </label>
         <button type="submit">Send Message</button>
     </form>
-    <p id="js-form-response"></p>
+    <div class="form-response"></div>
 </body>
+
 <script>
     (() => {
         const form = document.querySelector('form');
+        const formResponse = document.querySelector('div');
         form.action = process.env.SERVICE_URL;
-        const formResponse = document.querySelector('js-form-response');
 
         form.onsubmit = e => {
             e.preventDefault();
 
-            // Prepare data to send
             const data = {};
             const formElements = Array.from(form);
             formElements.map(input => (data[input.name] = input.value));
 
-            // Log what our lambda function will receive
             console.log(JSON.stringify(data));
+
+            var xhr = new XMLHttpRequest();
+            xhr.open(form.method, form.action, true);
+            xhr.setRequestHeader('Accept', 'application/json; charset=utf-8');
+            xhr.setRequestHeader('Content-Type', 'application/json; charset=UTF-8');
+
+            xhr.send(JSON.stringify(data));
+
+            xhr.onloadend = response => {
+                if (response.target.status === 200) {
+                    form.reset();
+                    formResponse.innerHTML = 'Thanks for the message. I’ll be in touch shortly.';
+                } else {
+                    formResponse.innerHTML = 'Something went wrong';
+                    console.error(JSON.parse(response.target.response).message);
+                }
+            };
         };
     })();
+
 </script>
 
 </html>

@@ -27,7 +27,7 @@ function sendEmail(formData, callback) {
   SES.sendEmail(emailParams, callback);
 }
 
-module.exports.staticSiteMailer = (event, context, callback) => {
+module.exports.staticSiteMailer = (event, _, callback) => {
   const formData = JSON.parse(event.body);
 
   sendEmail(formData, function(err, data) {
@@ -35,7 +35,7 @@ module.exports.staticSiteMailer = (event, context, callback) => {
       statusCode: err ? 500 : 200,
       headers: {
         "Content-Type": "application/json",
-        "Access-Control-Allow-Origin": SITE_NAME || "*"
+        "Access-Control-Allow-Origin": "*" || SITE_NAME
       },
       body: JSON.stringify({
         message: err ? err.message : data
