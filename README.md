@@ -18,7 +18,7 @@ You'll need to create an AWS user with programmatic access and Simple Email Serv
 1. On the review screen you should see your user name, with "Programmatic access", and "AdministratorAccess", then create the user.
 1. Locally run:
    ```sh
-   npm run serverless -- config credentials --provider aws --key <AWS_KEY> --secret <AWS_SECRET>
+   npm run sls -- config credentials --provider aws --key <AWS_KEY> --secret <AWS_SECRET>
    ```
 
 **Simple Email Service**
@@ -41,7 +41,12 @@ nvm use
 # Install Dependencies
 npm install
 
-npm start
+
+# Deploy
+npm run sls -- deploy --verbose
+
+# Test
+npm run sls -- invoke --function staticSiteMailer
 ```
 
 ## Deploy

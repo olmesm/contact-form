@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "serverless": "serverless",
-    "start": ""
+    "sls": "serverless",
+    "start:form": "parcel static-form/index.html"
   },
   "repository": {
     "type": "git",
@@ -19,7 +19,8 @@
   },
   "homepage": "https://github.com/olmesm/contact-form#readme",
   "devDependencies": {
-    "serverless": "^1.49.0",
-    "prettier": "*"
+    "parcel": "^1.12.3",
+    "prettier": "^1.18.2",
+    "serverless": "^1.49.0"
   }
 }

@@ -2,7 +2,17 @@ service: serverless-contact-form
 provider:
   name: aws
   runtime: nodejs10.x
+  iamRoleStatements:
+    - Effect: "Allow"
+      Action:
+        - "ses:SendEmail"
+      Resource: ["*"]
 
 functions:
-  hello:
+  staticSiteMailer:
     handler: handler.staticSiteMailer
+    events:
+      - http:
+          method: post
+          path: static-site-mailer
+          cors: true
