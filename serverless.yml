@@ -1,0 +1,8 @@
+service: serverless-contact-form
+provider:
+  name: aws
+  runtime: nodejs10.x
+
+functions:
+  hello:
+    handler: handler.staticSiteMailer

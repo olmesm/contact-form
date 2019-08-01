@@ -1,0 +1,25 @@
+{
+  "name": "serverless-contact-form",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "serverless": "serverless",
+    "start": ""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/olmesm/contact-form.git"
+  },
+  "keywords": [],
+  "author": "github.com/olmesm",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/olmesm/contact-form/issues"
+  },
+  "homepage": "https://github.com/olmesm/contact-form#readme",
+  "devDependencies": {
+    "serverless": "^1.49.0",
+    "prettier": "*"
+  }
+}
