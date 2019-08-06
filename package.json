@@ -4,8 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "sls": "serverless",
-    "start:form": "parcel static-form/index.html"
+    "deploy": "npm run sls -- deploy --verbose",
+    "form": "parcel static-form/index.html",
+    "sls": "serverless"
   },
   "repository": {
     "type": "git",

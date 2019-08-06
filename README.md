@@ -49,9 +49,8 @@ nvm use
 # Install Dependencies
 npm install
 
-
-# Deploy
-npm run sls -- deploy --verbose
+# Run a sample form
+npm run form
 
 # Test
 npm run sls -- invoke --function staticSiteMailer
@@ -59,7 +58,14 @@ npm run sls -- invoke --function staticSiteMailer
 
 ## Deploy
 
-Not there yet...
+```sh
+# Deploy
+npm run deploy
+```
+
+## Resources
+
+- [smashing contact form]
 
 <!-- MARKDOWN REFERENCES -->
 
