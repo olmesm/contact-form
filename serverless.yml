@@ -8,6 +8,10 @@ custom:
       - SES_SENDING_EMAIL
       - SES_RECEIVING_EMAIL
       - SITE_NAME
+      - TWILIO_ACCOUNT_SID
+      - TWILIO_AUTH_TOKEN
+      - WHATSAPP_FROM
+      - WHATSAPP_TO
 
 provider:
   name: aws
