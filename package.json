@@ -20,7 +20,7 @@
   },
   "homepage": "https://github.com/olmesm/contact-form#readme",
   "devDependencies": {
-    "aws-sdk": "^2.503.0",
+    "aws-sdk": "^2.814.0",
     "parcel": "^1.12.3",
     "prettier": "^1.18.2",
     "serverless": "^1.49.0",
